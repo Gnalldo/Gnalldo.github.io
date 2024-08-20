@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dark Themed Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 70px; /* Narrower sidebar */
+            height: 100%;
+            background-color: #1f1f1f;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Align items to the top */
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000; /* Ensure the sidebar is above other content */
+            padding-top: 20px; /* Space at the top */
+        }
+        .logo img {
+            width: 24px;  /* Set the width to 24 pixels */
+            height: 24px; /* Set the height to 24 pixels */
+            margin-bottom: 20px; /* Space between the logo and icons */
+        }
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px; /* Adjusted to move icons higher */
+        }
+        .nav-links li {
+            margin: 10px 0; /* Space between icons */
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            padding: 5px; /* Reduced padding */
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        .nav-links a img {
+            width: 24px;  /* Set the width of the icons to 24 pixels */
+            height: 24px; /* Set the height of the icons to 24 pixels */
+        }
+        .nav-links a:hover {
+            background-color: #333333;
+        }
+        .search-bar {
+            background-color: #1f1f1f;
+            padding: 10px;
+            text-align: center;
+            margin-left: 70px; /* Adjust for narrower sidebar */
+        }
+        .search-bar form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 50%; /* Set the width of the entire form */
+            margin: 0 auto;
+        }
+        .search-bar input[type="text"] {
+            width: 100%;
+            padding: 10px 50px 10px 20px; /* Adjust padding to make space for the buttons */
+            font-size: 16px;
+            background-color: #333333;
+            color: #ffffff;
+            border: 1px solid #444444;
+            border-radius: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .search-bar .buttons {
+            position: absolute;
+            right: 22px; /* Position the buttons inside the search box */
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 5px;
+        }
+        .search-bar button {
+            padding: 0;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .search-bar button img {
+            height: 24px;
+            width: 24px;
+        }
+        iframe {
+            width: calc(100% - 70px); /* Adjust for sidebar width */
+            height: calc(100vh - 50px); /* Adjust for the height of the search bar */
+            border: none;
+            margin-left: 70px; /* Adjust for sidebar width */
+            box-sizing: border-box;
+        }
+    </style>
+    <script>
+        function searchWithCopilot() {
+            const query = document.querySelector('.search-bar input[type="text"]').value;
+            window.location.href = `https://www.bing.com/chat?sendquery=1&q=${encodeURIComponent(query)}&form=HECODX`;
+        }
+
+        function searchWithChatGPT() {
+            const query = document.querySelector('.search-bar input[type="text"]').value;
+            window.location.href = `https://chat.openai.com/?q=${encodeURIComponent(query)}`;
+        }
+    </script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="resources/microsoft-365-seeklogo.svg" alt="Office 365 Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#"><img src="resources/email_icon.png" alt="Email"></a></li>
+            <li><a href="#"><img src="resources/calendar_icon.png" alt="Calendar"></a></li>
+            <li><a href="#"><img src="resources/word_icon.png" alt="Word"></a></li>
+            <li><a href="#"><img src="resources/excel_icon.png" alt="Excel"></a></li>
+            <li><a href="#"><img src="resources/powerpoint_icon.png" alt="PowerPoint"></a></li>
+            <!-- Add more links as needed -->
+        </ul>
+    </div>
+    <div class="search-bar">
+        <form id="searchForm">
+            <input type="text" id="searchQuery" name="q" placeholder="Search with Brave...">
+            <div class="buttons">
+                <button type="submit">
+                    <img src="resources/brave.svg" alt="Brave Logo">
+                </button>
+                <button type="button" onclick="searchWithCopilot()">
+                    <img src="resources/copilot.svg" alt="Copilot Logo">
+                </button>
+                <button type="button" onclick="searchWithChatGPT()">
+                    <img src="resources/chat-gpt.svg" alt="ChatGPT Logo">
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
