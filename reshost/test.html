@@ -1,0 +1,61 @@
+// Example SVGs inlined
+const braveSVG = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <!-- Your Brave SVG content here -->
+</svg>`;
+
+const copilotSVG = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <!-- Your Copilot SVG content here -->
+</svg>`;
+
+const chatGPTSVG = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <!-- Your ChatGPT SVG content here -->
+</svg>`;
+
+// Create the top bar container
+const topBar = document.createElement('div');
+topBar.id = 'custom-topbar';
+topBar.innerHTML = `
+    <div class="search-bar">
+        <form id="searchForm">
+            <input type="text" id="searchQuery" name="q" placeholder="Search with Brave, or choose an AI...">
+            <div class="buttons">
+                <button type="submit">
+                    ${braveSVG}
+                </button>
+                <button type="button" onclick="searchWithCopilot()">
+                    ${copilotSVG}
+                </button>
+                <button type="button" onclick="searchWithChatGPT()">
+                    ${chatGPTSVG}
+                </button>
+            </div>
+        </form>
+    </div>
+`;
+
+// Style the top bar to ensure it's positioned correctly
+topBar.style.position = 'fixed';
+topBar.style.top = '0';
+topBar.style.width = '100%';
+topBar.style.zIndex = '10000'; // High z-index to ensure it's on top
+topBar.style.backgroundColor = '#1f1f1f'; // Ensure it has a background color
+
+// Add the top bar to the document
+document.body.prepend(topBar);
+
+// Adjust body padding to account for the top bar height
+document.body.style.paddingTop = '60px'; // Adjust this based on your bar's height
+
+// JavaScript functions for button actions
+function searchWithCopilot() {
+    const query = document.querySelector('.search-bar input[type="text"]').value;
+    window.location.href = `https://www.bing.com/chat?sendquery=1&q=${encodeURIComponent(query)}&form=HECODX`;
+}
+
+function searchWithChatGPT() {
+    const query = document.querySelector('.search-bar input[type="text"]').value;
+    window.location.href = `https://chat.openai.com/?q=${encodeURIComponent(query)}`;
+}
