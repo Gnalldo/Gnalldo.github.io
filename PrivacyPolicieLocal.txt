@@ -1,0 +1,17 @@
+# Privacy Policy for [Your Extension Name]
+
+## Data Collection
+
+This extension does not collect, store, or transmit any personal data or browsing activity from the user. The extension operates solely within the user's browser, modifying the appearance and functionality of the `news.google.com` webpage by adding a custom search bar.
+
+## Data Usage
+
+Since no data is collected, there is no data to use or share. All interactions and changes are processed locally within the user's browser session.
+
+## Changes to This Policy
+
+We will update this privacy policy if any changes are made to the extension that impact user privacy. Users will be informed of these changes and will have the option to review the updated policy.
+
+## Contact Us
+
+If you have any questions or concerns about this privacy policy, please contact us at [gjeff77@outlook.com].
