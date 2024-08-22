@@ -1,5 +1,4 @@
-# Privacy Policy for [Your Extension Name]
-
+# Privacy Policy for GoogleNewsPlus Extension
 ## Data Collection
 
 This extension does not collect, store, or transmit any personal data or browsing activity from the user. The extension operates solely within the user's browser, modifying the appearance and functionality of the `news.google.com` webpage by adding a custom search bar.
